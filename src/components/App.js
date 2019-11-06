@@ -3,6 +3,7 @@ import React from "react"
 import { Link, Route, withRouter } from "react-router-dom"
 import { getToken } from "../utils/api"
 import ProtectedRoute from "./ProtectedRoute"
+import Home from "./Home"
 import Signin from "./Signin"
 import Account from "./Account"
 import Logout from "./Logout"
@@ -21,6 +22,7 @@ function App() {
 				{signedIn && <Link to="/logout">Logout</Link>}
 			</nav>
 
+			<Route exact path="/" component={Home} />
 			<Route exact path="/signin" component={Signin} />
 			{/* These routes will require an auth token to be set, due to our handy HOC */}
 			<ProtectedRoute exact path="/account" component={Account} />
