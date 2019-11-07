@@ -84,9 +84,9 @@ app.post("/signin", (req, res, next) => {
 
 app.get("/me", auth.authMiddleware(), (req, res, next) => {
 	// const data = db.read()
-	const user = db.users.find((v) => v.id === req.userId)
+	const { password, ...user } = db.users.find((v) => v.id === req.userId)
 
-	delete user.password
+	// delete user.password
 
 	res.json(user)
 })
