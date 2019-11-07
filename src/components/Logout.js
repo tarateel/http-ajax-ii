@@ -5,7 +5,7 @@ function Logout(props) {
 	// Nothing has to happen on the server to log out,
 	// just delete the token
 	localStorage.removeItem("token")
-	
+
 	return <Redirect to="/signin" />
 }
 

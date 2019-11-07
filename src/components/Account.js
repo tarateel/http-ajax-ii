@@ -8,14 +8,15 @@ function Account(props) {
 	})
 
 	useEffect(() => {
-		api().get("/me")
-			.then(result => {
+		api()
+			.get("/me")
+			.then((result) => {
 				setUser({
 					name: result.data.name,
 					email: result.data.email,
 				})
 			})
-			.catch(error => {
+			.catch((error) => {
 				console.log(error)
 			})
 	}, [])
