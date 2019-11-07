@@ -29,7 +29,7 @@ function Signin(props) {
 				props.history.push("/account")
 			})
 			.catch(err => {
-				setError(err.response.data.message)
+				setError(err.response.data)
 			})
 	}
 	
